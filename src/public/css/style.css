@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+}
+
+input, button {
+  font-size: 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.texto-termo {
+  text-align: justify;
+  margin-bottom: 25px;
+}
+
+.grupo {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.assinatura-area {
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+canvas {
+  width: 100%;
+  height: 220px;
+  background: #fff;
+  touch-action: none;
+}
+
+.botoes {
+  margin-top: 10px;
+}
+
+button {
+  padding: 14px 18px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.botoes button {
+  background: #e0e0e0;
+  margin-right: 10px;
+}
+
+.assinatura-fixada img {
+  max-width: 100%;
+  border: 1px solid #000;
+  margin-top: 10px;
+}
+
+.btn-enviar {
+  margin-top: 20px;
+  width: 100%;
+  padding: 16px;
+  background: #1a73e8;
+  color: #fff;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .container {
+    padding: 30px 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .btn-enviar {
+    font-size: 18px;
+  }
+
+  canvas {
+    height: 250px;
+  }
+
+  .botoes button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
