@@ -9,8 +9,9 @@ const ejs = require('ejs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// aumentar limites para aceitar imagens em base64 enviadas via form
+app.use(express.urlencoded({ extended: true, limit: '20mb' }));
+app.use(express.json({ limit: '20mb' }));
 
 // Configuração do EJS como template engine
 app.engine('ejs', ejs.renderFile);
