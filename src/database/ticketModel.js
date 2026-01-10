@@ -4,8 +4,8 @@ const { Pool } = require('pg');
 async function inserirTicket(dados) {
   const query = `
     INSERT INTO ticket_segunda_via
-    (protocolo, nome, documento, placa, motivo, data_atendimento, assinatura, pdf)
-    VALUES ($1,$2,$3,$4,$5,$6,$7,$8)
+    (protocolo, nome, documento, placa, motivo, data_atendimento, assinatura, pdf, pdf_base64, fotos, fotos_base64)
+    VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)
     RETURNING id
   `;
 
@@ -17,7 +17,10 @@ async function inserirTicket(dados) {
     dados.motivo,
     dados.data,
     dados.assinatura,
-    dados.pdf
+    dados.pdf,
+    dados.pdf_base64 || null,
+    JSON.stringify(dados.fotos || []),
+    JSON.stringify(dados.fotos_base64 || [])
   ];
 
   // se a pool padrão já aponta para o DB correto, use-a; caso contrário, crie uma pool temporária

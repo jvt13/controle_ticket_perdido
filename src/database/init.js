@@ -33,10 +33,27 @@ async function initDatabase() {
         data_atendimento DATE,
         assinatura TEXT,
         pdf VARCHAR(255),
+        fotos JSONB DEFAULT '[]',
+        pdf_base64 TEXT,
+        fotos_base64 JSONB DEFAULT '[]',
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
     `);
     console.log("Tabela 'ticket_segunda_via' verificada/criada com sucesso.");
+    // garantir coluna fotos para instalações já existentes
+    try {
+      await newPool.query(`ALTER TABLE ticket_segunda_via ADD COLUMN IF NOT EXISTS fotos JSONB DEFAULT '[]'`);
+      console.log("Coluna 'fotos' verificada/adicionada com sucesso.");
+    } catch (err) {
+      console.error("Falha ao garantir coluna 'fotos':", err.message);
+    }
+    try {
+      await newPool.query(`ALTER TABLE ticket_segunda_via ADD COLUMN IF NOT EXISTS pdf_base64 TEXT`);
+      await newPool.query(`ALTER TABLE ticket_segunda_via ADD COLUMN IF NOT EXISTS fotos_base64 JSONB DEFAULT '[]'`);
+      console.log("Colunas 'pdf_base64' e 'fotos_base64' garantidas com sucesso.");
+    } catch (err) {
+      console.error("Falha ao garantir colunas base64:", err.message);
+    }
   } catch (err) {
     console.error('Erro ao verificar/criar tabela:', err.message);
     throw err;

@@ -54,6 +54,16 @@
         </select>
       </div>
 
+      <hr>
+      <h3>Fotos do Atendimento (até 5)</h3>
+      <div id="fotosSection">
+        <div id="fotosContainer" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;"></div>
+        <div>
+          <button type="button" id="tirarFotoBtn">Tirar foto</button>
+          <small style="margin-left:8px;color:#666;">Mostra somente miniaturas; clique para substituir.</small>
+        </div>
+        <div id="hiddenFotos"></div>
+      </div>
 
       <h3>Assinatura do Cliente</h3>
 
@@ -75,12 +85,22 @@
         </div>
       </div>
 
+      <hr>
+
+      <div style="margin-top:12px;">
+        <label>
+          <input type="checkbox" name="lgpd" id="lgpdCheckbox" required>
+          Li e concordo com o tratamento dos meus dados pessoais (LGPD)
+        </label>
+      </div>
+
       <button class="btn-enviar" type="submit">Finalizar Atendimento</button>
 
     </form>
   </div>
 
   <script src="/public/js/assinatura.js"></script>
+  <script src="/public/js/fotos.js"></script>
 </body>
 
 </html>
