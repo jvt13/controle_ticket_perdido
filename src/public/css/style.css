@@ -47,6 +47,13 @@ input {
   border: 1px solid #ccc;
 }
 
+select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
 .assinatura-area {
   border: 1px solid #ccc;
   margin-top: 10px;

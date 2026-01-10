@@ -42,4 +42,12 @@ function startServer(port) {
     });
 }
 
-startServer(PORT);
+// chame a inicialização do banco antes de iniciar o servidor
+const initDatabase = require('./src/database/init');
+
+initDatabase()
+    .then(() => startServer(PORT))
+    .catch((err) => {
+        console.error('Falha na inicialização do banco de dados (continuando):', err.message || err);
+        startServer(PORT);
+    });

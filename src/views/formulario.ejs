@@ -1,68 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Termo – Segunda Via de Ticket</title>
   <link rel="stylesheet" href="/public/css/style.css">
 </head>
+
 <body>
 
-<div class="container">
-  <h1>TERMO DE SEGUNDA VIA DE TICKET</h1>
+  <div class="container">
+    <h1>TERMO DE SEGUNDA VIA DE TICKET</h1>
 
-  <p class="texto-termo">
-    Declaro que solicitei a segunda via de ticket de estacionamento por motivo de perda,
-    estando ciente das regras vigentes do estacionamento e assumindo total responsabilidade
-    pelas informações prestadas neste formulário.
-  </p>
+    <p class="texto-termo">
+      Declaro que solicitei a segunda via de ticket de estacionamento por motivo de perda,
+      estando ciente das regras vigentes do estacionamento e assumindo total responsabilidade
+      pelas informações prestadas neste formulário.
+    </p>
 
-  <form method="POST" action="/salvar">
-    
-    <div class="grupo">
-      <label>Nome do Cliente</label>
-      <input type="text" name="nome" required>
-    </div>
+    <form method="POST" action="/salvar">
 
-    <div class="grupo">
-      <label>CPF / Documento</label>
-      <input type="text" name="documento" required>
-    </div>
+      <div class="grupo">
+        <label>Nome do Cliente</label>
+        <input type="text" name="nome" required>
+      </div>
 
-    <div class="grupo">
-      <label>Placa do Veículo</label>
-      <input type="text" name="placa" required>
-    </div>
+      <div class="grupo">
+        <label>CPF / Documento</label>
+        <input type="text" name="documento" required>
+      </div>
 
-    <div class="grupo">
-      <label>Data</label>
-      <input type="date" name="data" required>
-    </div>
+      <div class="grupo">
+        <label>Placa do Veículo</label>
+        <input type="text" name="placa" required>
+      </div>
 
-    <hr>
+      <div class="grupo">
+        <label>Data</label>
+        <input type="date" name="data" required>
+      </div>
 
-    <h3>Assinatura do Cliente</h3>
+      <hr>
 
-    <div class="assinatura-area">
-      <canvas id="canvas"></canvas>
-      <input type="hidden" name="assinatura" id="assinaturaInput">
-    </div>
+      <div class="grupo">
+        <label>Motivo da Segunda Via</label>
+        <select name="motivo" required>
+          <option value="">Selecione</option>
+          <option value="Perda do ticket">Perda do ticket</option>
+          <option value="Problema na leitura">Problema na leitura</option>
+          <option value="Ticket não emitido">Ticket não emitido</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
 
-    <div class="botoes">
-      <button type="button" onclick="limparAssinatura()">Limpar</button>
-      <button type="button" onclick="confirmarAssinatura()">Confirmar Assinatura</button>
-    </div>
 
-    <div class="assinatura-fixada">
-      <p>Assinatura confirmada:</p>
-      <img id="assinaturaImg">
-    </div>
+      <h3>Assinatura do Cliente</h3>
 
-    <button class="btn-enviar" type="submit">Finalizar Atendimento</button>
+      <div class="assinatura-area">
+        <canvas id="canvas"></canvas>
+        <input type="hidden" name="assinatura" id="assinaturaInput">
+      </div>
 
-  </form>
-</div>
+      <div class="botoes">
+        <button type="button" onclick="limparAssinatura()">Limpar</button>
+        <button type="button" onclick="confirmarAssinatura()">Confirmar Assinatura</button>
+      </div>
 
-<script src="/public/js/assinatura.js"></script>
+      <div class="assinatura-fixada">
+        <p>Assinatura confirmada:</p>
+        <img id="assinaturaImg">
+      </div>
+
+      <button class="btn-enviar" type="submit">Finalizar Atendimento</button>
+
+    </form>
+  </div>
+
+  <script src="/public/js/assinatura.js"></script>
 </body>
+
 </html>
