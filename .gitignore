@@ -1,0 +1,9 @@
+node_modules/
+src/uploads/
+/.env
+/.env.local
+npm-debug.log
+yarn-error.log
+dist/
+/.idea/
+/.vscode/
