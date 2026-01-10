@@ -80,6 +80,31 @@ function confirmarAssinatura() {
   document.getElementById('assinaturaImg').src = imagem;
 
   assinaturaConfirmada = true;
-  canvas.style.pointerEvents = 'none'; // trava total
+  // esconder área de desenho e os botões, mostrar a assinatura fixada
+  const area = document.getElementById('assinaturaArea');
+  const botoes = document.getElementById('assinaturaBotoes');
+  const fixada = document.getElementById('assinaturaFixada');
+
+  if (area) area.style.display = 'none';
+  if (botoes) botoes.style.display = 'none';
+  if (fixada) fixada.style.display = 'block';
+}
+
+function editarAssinatura() {
+  const area = document.getElementById('assinaturaArea');
+  const botoes = document.getElementById('assinaturaBotoes');
+  const fixada = document.getElementById('assinaturaFixada');
+
+  if (area) area.style.display = 'block';
+  if (botoes) botoes.style.display = 'block';
+  if (fixada) fixada.style.display = 'none';
+
+  assinaturaConfirmada = false;
+  canvas.style.pointerEvents = 'auto';
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const input = document.getElementById('assinaturaInput');
+  if (input) input.value = '';
+  const img = document.getElementById('assinaturaImg');
+  if (img) img.src = '';
 }
 

@@ -57,19 +57,22 @@
 
       <h3>Assinatura do Cliente</h3>
 
-      <div class="assinatura-area">
+      <div class="assinatura-area" id="assinaturaArea">
         <canvas id="canvas"></canvas>
         <input type="hidden" name="assinatura" id="assinaturaInput">
       </div>
 
-      <div class="botoes">
+      <div class="botoes" id="assinaturaBotoes">
         <button type="button" onclick="limparAssinatura()">Limpar</button>
         <button type="button" onclick="confirmarAssinatura()">Confirmar Assinatura</button>
       </div>
 
-      <div class="assinatura-fixada">
+      <div class="assinatura-fixada" id="assinaturaFixada" style="display:none;">
         <p>Assinatura confirmada:</p>
-        <img id="assinaturaImg">
+        <img id="assinaturaImg" alt="Assinatura confirmada">
+        <div style="margin-top:8px;">
+          <button type="button" id="editarAssinaturaBtn" onclick="editarAssinatura()">Editar assinatura</button>
+        </div>
       </div>
 
       <button class="btn-enviar" type="submit">Finalizar Atendimento</button>
