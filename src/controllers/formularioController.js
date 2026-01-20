@@ -1,7 +1,4 @@
-const initDatabase = require('../database/init');
 const { inserirTicket } = require('../database/ticketModel');
-
-initDatabase();
 
 
 exports.formulario = (req, res) => {

@@ -17,7 +17,7 @@ async function inserirTicket(dados) {
     dados.motivo,
     dados.data,
     dados.assinatura,
-    dados.pdf,
+    dados.pdf,+
     dados.pdf_base64 || null,
     JSON.stringify(dados.fotos || []),
     JSON.stringify(dados.fotos_base64 || [])

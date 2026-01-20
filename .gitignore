@@ -1,9 +1,13 @@
-node_modules/
-src/uploads/
-/.env
-/.env.local
-npm-debug.log
-yarn-error.log
-dist/
-/.idea/
-/.vscode/
+#node_modules/
+#src/uploads/
+#/.env
+#/.env.local
+#npm-debug.log
+#yarn-error.log
+#dist/
+#/.idea/
+#/.vscode/
+
+# pm2 dump file
+#pm2.log
+#dump.pm2
